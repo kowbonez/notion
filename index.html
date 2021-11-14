@@ -10,7 +10,13 @@ body { margin: 0; padding: 0; }
 </style>
 </head>
 <body>
-<div id="map"></div>
+<div id="map" style="
+	width: 750px;
+	height: 750px;
+	float: right;
+	margin: 0;
+	border: 1px solid black"
+	></div>
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBuejE3NjBmZHg1In0.uG4HNIIupOvdeE8tDSD9_g';
@@ -34,8 +40,8 @@ map.on("load", function(){
 	
 	map.on('click', 'state-labels', function(e) {
 		event.stopPropagation();
-		var name = e.features[0].properties.name;
-		window.location.href = '/'+name;
+		var name = e.features[0].properties.State;
+		window.location.href ='https://www.notion.so/'+name;
 	
 	});
 	
