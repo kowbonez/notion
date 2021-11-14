@@ -11,6 +11,7 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <div id="map"></div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBuejE3NjBmZHg1In0.uG4HNIIupOvdeE8tDSD9_g';
 const map = new mapboxgl.Map({
@@ -19,6 +20,20 @@ const map = new mapboxgl.Map({
     center: [-5.1, 21], // starting position [lng, lat]
     zoom: 3 // starting zoom
 });
+map.addControl(new mapboxgl.FullscreenControl());
+map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.ScaleControl());
+
+map.on("load", function(){
+	map.on('mouseenter', 'state-labels', function(){
+		map.getCanvas().style.cursor = 'pointer';
+	});
+	map.on('mouseleave', 'state-labels', function() {
+		map.getCanvas().style.cursor = '';
+	});
+	
+});
+
 </script>
 </body>
 </html>
