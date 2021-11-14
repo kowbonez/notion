@@ -11,7 +11,6 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <div id="map"></div>
-
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBuejE3NjBmZHg1In0.uG4HNIIupOvdeE8tDSD9_g';
 const map = new mapboxgl.Map({
@@ -24,6 +23,18 @@ map.addControl(new mapboxgl.FullscreenControl());
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new mapboxgl.ScaleControl());
 
+map.on("load", function() {
+
+   map.on('mouseenter', 'state-labels', function() { map.getCanvas().style.cursor = 'pointer'; });
+   map.on('mouseleave', 'state-labels', function() { map.getCanvas().style.cursor = ''; });
+   
+    map.on('click', 'state-labels', function(e) {
+      event.stopPropagation();
+      var name = e.features[0].properties.State;
+      // this could probably improved with the proper mediawiki magic word, but need to figure out which one and how to make it work in widgets
+      window.location.href = 'file:///Z:/Writing/Knightguard.scriv/TiddlyWiki/index.html#'+name;
+   });
+});
 
 </script>
 </body>
