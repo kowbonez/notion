@@ -32,6 +32,13 @@ map.on("load", function(){
 		map.getCanvas().style.cursor = '';
 	});
 	
+	map.on('click', 'state-labels', function(e) {
+		event.stopPropagation();
+		var name = e.features[0].properties.name;
+		window.location.href = '/'+name;
+	
+	});
+	
 });
 
 </script>
