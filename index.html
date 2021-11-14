@@ -37,7 +37,7 @@ map.on("load", function() {
     map.on('click', 'state-labels', function(e) {
       event.stopPropagation();
       var name = e.features[0].properties.State;
-      window.location.href = 'https://www.notion.so/Locations-54f70ad37e454b3db6ac57a0ec75550a';
+      window.location.href = '/figtickler/'+name;
    });
 
 });
