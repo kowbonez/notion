@@ -1,1 +1,8 @@
 <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/figtickler/ckutaw533191z17ql1kkhvefs.html?title=false&access_token=pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBuejE3NjBmZHg1In0.uG4HNIIupOvdeE8tDSD9_g&zoomwheel=false#3/-12.96/36.19" title="Estada" style="border:none;"></iframe>
+mapboxgl.accessToken ='pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBuejE3NjBmZHg1In0.uG4HNIIupOvdeE8tDSD9_g';
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
