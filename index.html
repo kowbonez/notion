@@ -16,16 +16,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZmlndGlja2xlciIsImEiOiJja3VtMDV2aGozbWZ1MnBue
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/figtickler/ckutaw533191z17ql1kkhvefs', // style URL
-    center: [50, 100], // starting position [lng, lat]
+    center: [-5.1, 21], // starting position [lng, lat]
     zoom: 3 // starting zoom
 });
 
 map.addControl(new mapboxgl.FullscreenControl());
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new mapboxgl.ScaleControl());
-
-
-
 </script>
 </body>
 </html>
