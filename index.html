@@ -23,7 +23,25 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.FullscreenControl());
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new mapboxgl.ScaleControl());
-    
+
+map.on("load", function() {
+
+   map.on('mouseenter', 'state-labels', function(e) { 
+		map.getCanvas().style.cursor = 'pointer'; 
+	});
+	
+   map.on('mouseleave', 'state-labels', function() { 
+		map.getCanvas().style.cursor = ''; 
+	});
+   
+    map.on('click', 'state-labels', function(e) {
+      event.stopPropagation();
+      var name = e.features[0].properties.State;
+      window.location.href = 'obsidian://open?vault=Obsidian&file=Knightguard%2FLocations%2F'+name;
+   });
+
+});
+
 </script>
 </body>
 </html>
